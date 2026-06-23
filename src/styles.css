@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------
+   1. RESET & CRITICAL VIEWPORT LOCKS
+---------------------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #05020c;
+  color: #f8fafc;
+  font-family: 'Space Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom premium romantic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 2, 12, 0.95);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(236, 72, 153, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(236, 72, 153, 0.65);
+}
+
+/* Lenis smooth scrolling integrations */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------
+   2. CORE STACKING & ACCELERATION LAYERS
+---------------------------------------------------- */
+/* ----------------------------------------------------
+   2. CORE STACKING & ACCELERATION LAYERS
+---------------------------------------------------- */
+#story-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.story-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  contain: layout paint;
+}
+
+/* Make Chapter 1 visible by default on load */
+#glance {
+  opacity: 1;
+  visibility: visible;
+  z-index: 20;
+}
+
+/* Layer 1: Ambient Backgrounds */
+.story-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  contain: paint;
+}
+
+/* Darkened overlay to ensure text stands out over anime illustrations */
+.story-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: -webkit-linear-gradient(
+    top,
+    rgba(5, 2, 12, 0.4) 0%,
+    rgba(5, 2, 12, 0.65) 50%,
+    rgba(5, 2, 12, 0.85) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 2, 12, 0.4) 0%,
+    rgba(5, 2, 12, 0.65) 50%,
+    rgba(5, 2, 12, 0.85) 100%
+  );
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Layer 2: Floating Decorative Assets */
+.story-floating-assets {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  contain: layout paint;
+}
+
+/* Layer 3: Narrative Content Layout */
+.story-content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+/* Prevent layout-critical SVGs from text highlighting */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* ----------------------------------------------------
+   3. PREMIUM GLASSMORPHISM & ROMANTIC CARD
+---------------------------------------------------- */
+.romantic-card {
+  background: rgba(18, 9, 28, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(236, 72, 153, 0.15);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(236, 72, 153, 0.04);
+  border-radius: 28px;
+  padding: 2.2rem;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.romantic-card:hover {
+  border-color: rgba(236, 72, 153, 0.35);
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(236, 72, 153, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+}
+
+.text-glow-romantic {
+  text-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
+}
+
+/* ----------------------------------------------------
+   4. LYRICS TYPOGRAPHY
+---------------------------------------------------- */
+.poetic-lyric {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ec4899;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.1rem;
+  text-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
+}
+
+@media(min-width: 768px) {
+  .poetic-lyric {
+    font-size: 1.65rem;
+  }
+}
+
+.sub-lyric {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: #94a3b8;
+}
+
+/* ----------------------------------------------------
+   5. PRELOADER SHIELD
+---------------------------------------------------- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #05020c;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: opacity, visibility;
+}
+
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.heart-pulsing {
+  animation: heart-beat 1.4s infinite ease-in-out;
+  filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.6));
+}
+
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.12); }
+  45% { transform: scale(1.05); }
+  60% { transform: scale(1.18); }
+}
+
+/* Custom Scroll Indicator */
+.scroll-indicator-dot {
+  animation: scroll-bounce 2s infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(8px); opacity: 1; }
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Glance — A Love Story Without Words</title>
+  <meta name="description" content="An immersive scroll-driven visual novel following the silent connection between two souls.">
+  
+
+
+  <!-- Project Stylesheet link -->
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+  <!-- 1. PULSING PRELOADER -->
+  <div id="preloader">
+    <div class="heart-pulsing w-24 h-24 text-pink-500">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+    <h1 class="text-display mt-6 text-2xl font-bold tracking-[0.4em] uppercase text-pink-500 text-glow-romantic">The Glance</h1>
+    <p class="text-[10px] tracking-[0.2em] text-slate-500 mt-2 uppercase">Connecting Two Hearts...</p>
+  </div>
+
+  <!-- 2. SMOOTH SCROLL WRAPPER (LENIS) -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- MASTER STORY PIN CONTAINER -->
+      <div id="story-container">
+
+        <!-- ========================================================
+             CHAPTER 1: THE GLANCE (Sunset Warm-Gold / Left Aligned)
+             ======================================================== -->
+        <section id="glance" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter1.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <!-- Sunset glow and couple silhouettes looking at each other -->
+            <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="960" cy="700" r="400" fill="url(#sun-glow)" opacity="0.2" />
+              <defs>
+                <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#f59e0b" />
+                  <stop offset="100%" stop-color="#592b23" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="story-content flex items-center">
+            <div class="container mx-auto px-6 md:px-24">
+              <div class="max-w-xl text-left">
+                <span class="poetic-lyric block text-glow-romantic">Speak with your eyes...</span>
+                <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70">...and I will understand</span>
+                <h2 class="text-display text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-none text-glow">The Glance</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-amber-500 to-pink-500 mb-6 rounded-full"></div>
+                <p class="text-slate-200 text-sm md:text-base font-light leading-relaxed mb-6">
+                  A crowded station platform, a passing train. Through the rush, your eyes found mine. In that single, unmoving second, the noise of the city fell completely silent. We did not speak, but the world stood still.
+                </p>
+                <!-- Live Love Countdown widget -->
+                <div class="countdown-panel mt-4">
+                  <span class="text-[10px] tracking-[0.3em] uppercase text-pink-400 font-semibold block mb-2 text-glow-romantic">Since our first glance</span>
+                  <div class="grid grid-cols-4 gap-3 max-w-sm">
+                    <div class="bg-purple-950/20 backdrop-blur-md border border-pink-500/10 rounded-xl p-2 text-center shadow-[0_0_15px_rgba(236,72,153,0.02)]">
+                      <span id="days" class="block text-xl md:text-2xl font-bold text-pink-500 text-glow-romantic">00</span>
+                      <span class="text-[8px] uppercase tracking-widest text-slate-400">Days</span>
+                    </div>
+                    <div class="bg-purple-950/20 backdrop-blur-md border border-pink-500/10 rounded-xl p-2 text-center shadow-[0_0_15px_rgba(236,72,153,0.02)]">
+                      <span id="hours" class="block text-xl md:text-2xl font-bold text-pink-500 text-glow-romantic">00</span>
+                      <span class="text-[8px] uppercase tracking-widest text-slate-400">Hours</span>
+                    </div>
+                    <div class="bg-purple-950/20 backdrop-blur-md border border-pink-500/10 rounded-xl p-2 text-center shadow-[0_0_15px_rgba(236,72,153,0.02)]">
+                      <span id="minutes" class="block text-xl md:text-2xl font-bold text-pink-500 text-glow-romantic">00</span>
+                      <span class="text-[8px] uppercase tracking-widest text-slate-400">Mins</span>
+                    </div>
+                    <div class="bg-purple-950/20 backdrop-blur-md border border-pink-500/10 rounded-xl p-2 text-center shadow-[0_0_15px_rgba(236,72,153,0.02)]">
+                      <span id="seconds" class="block text-xl md:text-2xl font-bold text-pink-500 text-glow-romantic">00</span>
+                      <span class="text-[8px] uppercase tracking-widest text-slate-400">Secs</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none opacity-50">
+              <span class="text-[9px] tracking-[0.2em] uppercase text-slate-500 mb-1">Scroll to begin</span>
+              <div class="w-5 h-8 border border-slate-500/30 rounded-full flex justify-center p-1">
+                <div class="w-1.5 h-1.5 bg-pink-500 rounded-full scroll-indicator-dot"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             CHAPTER 2: THE BLUSH (Cherry Blossom Pink / Right Aligned)
+             ======================================================== -->
+        <section id="blush" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter2.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <!-- Cherry tree branch and falling blossom particles -->
+            <svg class="absolute inset-0 w-full h-full opacity-50" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="cherry-branch">
+                <!-- Elegant Top-Left Branch Silhouette -->
+                <path d="M 0,0 C 200,100 400,100 500,50 C 450,150 350,220 200,250 M 0,50 C 150,120 250,110 300,80" stroke="#12060b" stroke-width="12" stroke-linecap="round" />
+                <!-- Blossom shapes on branch -->
+                <circle cx="300" cy="80" r="10" fill="#f472b6" opacity="0.8" />
+                <circle cx="280" cy="110" r="8" fill="#fbcfe8" opacity="0.9" />
+                <circle cx="420" cy="70" r="12" fill="#ec4899" opacity="0.75" />
+                <circle cx="480" cy="50" r="7" fill="#fbcfe8" opacity="0.85" />
+              </g>
+              <!-- Falling Petals (staggered in JS) -->
+              <g class="petals-group">
+                <path d="M 400,200 C 410,220 405,240 395,245 C 385,250 375,240 370,220 C 365,200 375,180 385,175 C 395,170 405,180 400,200 Z" fill="#fbcfe8" opacity="0.7" />
+                <path d="M 800,150 C 810,170 805,190 795,195 C 785,200 775,190 770,170 C 765,150 775,130 785,125 C 795,120 805,130 800,150 Z" fill="#f472b6" opacity="0.6" />
+                <path d="M 1200,300 C 1210,320 1205,340 1195,345 C 1185,350 1175,340 1170,320 C 1165,300 1175,280 1185,275 C 1195,270 1205,280 1200,300 Z" fill="#fbcfe8" opacity="0.75" />
+                <path d="M 1500,220 C 1510,240 1505,260 1495,265 C 1485,270 1475,260 1470,240 C 1465,220 1475,200 1485,195 C 1495,190 1505,200 1500,220 Z" fill="#ec4899" opacity="0.65" />
+              </g>
+            </svg>
+          </div>
+          <div class="story-content flex items-center justify-end">
+            <div class="container mx-auto px-6 md:px-24">
+              <div class="max-w-xl text-right ml-auto">
+                <span class="poetic-lyric block text-glow-romantic">Blush just a little...</span>
+                <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70">...and I will be yours</span>
+                <h2 class="text-display text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-none text-glow">The Blush</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-pink-400 to-rose-500 ml-auto mb-6 rounded-full"></div>
+                <p class="text-slate-200 text-sm md:text-base font-light leading-relaxed">
+                  A momentary look turned away, a sudden rush of color. A warmth rose to my cheeks as I realized your eyes were still on mine. In the quiet spacing of our breathing, we both smiled, sharing a secret without a single sound.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             CHAPTER 3: THE WAIT (Cosmic Indigo / Left Aligned)
+             ======================================================== -->
+        <section id="wait" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter3.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <!-- Constellations -->
+            <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="constellations">
+                <line x1="200" y1="300" x2="350" y2="250" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+                <line x1="350" y1="250" x2="420" y2="400" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+                <line x1="420" y1="400" x2="550" y2="420" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+                <circle cx="200" cy="300" r="4" fill="#fff" class="glow-star" />
+                <circle cx="350" cy="250" r="3" fill="#a78bfa" />
+                <circle cx="420" cy="400" r="5" fill="#fff" class="glow-star" />
+                <circle cx="550" cy="420" r="3" fill="#f472b6" />
+              </g>
+            </svg>
+          </div>
+          <div class="story-content flex items-center">
+            <div class="container mx-auto px-6 md:px-24">
+              <div class="max-w-xl text-left">
+                <span class="poetic-lyric block text-glow-romantic">Waiting on your path...</span>
+                <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70">...hoping for a sign</span>
+                <h2 class="text-display text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-none text-glow">The Wait</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-indigo-400 to-purple-500 mb-6 rounded-full"></div>
+                <p class="text-slate-200 text-sm md:text-base font-light leading-relaxed">
+                  Days turned into evenings under a canopy of stars. Longing grew in the space between our paths. I looked up at the moon, wondering if you were staring at the same glowing orb, feeling the same silent echo of anticipation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             CHAPTER 4: A SIGN (Morning Dawn Orange / Center Cinematic)
+             ======================================================== -->
+        <section id="sign" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter4.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <!-- Rising Sun light rays and vector clouds -->
+            <svg class="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="light-rays">
+                <path d="M 960,1080 L 100,0 L 250,0 Z" fill="#f59e0b" opacity="0.08" />
+                <path d="M 960,1080 L 700,0 L 850,0 Z" fill="#f59e0b" opacity="0.08" />
+                <path d="M 960,1080 L 1200,0 L 1350,0 Z" fill="#f472b6" opacity="0.06" />
+                <path d="M 960,1080 L 1650,0 L 1800,0 Z" fill="#f59e0b" opacity="0.08" />
+              </g>
+            </svg>
+          </div>
+          <div class="story-content flex items-center justify-center text-center">
+            <div class="container mx-auto px-6 max-w-4xl">
+              <span class="poetic-lyric block text-glow-romantic">A quiet whisper...</span>
+              <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70">...just give me a sign</span>
+              <h2 class="text-display text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-none text-glow">A Sign</h2>
+              <div class="h-1 w-28 bg-gradient-to-r from-amber-500 via-pink-500 to-rose-500 mx-auto mb-8 rounded-full"></div>
+              <p class="text-slate-200 text-base md:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto">
+                The morning breaks, soft and bright. A letter left on the bench, or perhaps just a lingering shadow.
+              </p>
+              <p class="text-slate-400 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto">
+                A quiet clue that we were stepping onto the same path, and the dawn began to melt the distance between us.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             CHAPTER 5: YOUR HAND (Meadow Yellow / Left Glass Card Quiz)
+             ======================================================== -->
+        <section id="hand" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter5.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <svg class="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="meadow-grass">
+                <path d="M 0,1080 C 100,900 150,850 120,1080 M 100,1080 C 250,880 300,820 280,1080 M 300,1080 C 400,920 450,900 420,1080 M 600,1080 C 750,860 800,800 780,1080" stroke="#0e0f06" stroke-width="3" stroke-linecap="round" />
+              </g>
+            </svg>
+          </div>
+          <div class="story-content flex items-center justify-start p-6 md:p-24">
+            <div class="romantic-card max-w-xl w-full relative">
+              <span class="poetic-lyric block text-glow-romantic text-left">Take my hand in yours...</span>
+              <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70 text-left">...and hold it close</span>
+              <h2 class="text-display text-2xl md:text-3xl font-extrabold tracking-tight mb-4 leading-none text-glow text-left">The Connection Quiz</h2>
+              
+              <div id="quiz-box" class="w-full mt-2 text-left">
+                <div id="quiz-question-container">
+                  <div class="flex justify-between items-center mb-4">
+                    <span id="quiz-question-num" class="text-[10px] uppercase tracking-widest text-pink-400 font-bold text-glow-romantic">Question 1 of 4</span>
+                    <div class="flex items-center gap-1 text-pink-500">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"></path></svg>
+                      <span id="quiz-lives" class="text-xs font-bold">100%</span>
+                    </div>
+                  </div>
+                  <h3 id="quiz-question-text" class="text-slate-200 text-sm font-medium mb-4 leading-relaxed">Where did we share our very first glance?</h3>
+                  <div id="quiz-options" class="flex flex-col gap-2.5"></div>
+                </div>
+                
+                <div id="quiz-result-container" class="hidden text-center py-4">
+                  <h3 class="text-xl font-bold text-pink-500 text-glow-romantic mb-2">Our Love Score</h3>
+                  <div class="text-4xl font-extrabold text-slate-100 mb-3"><span id="quiz-score">100</span>%</div>
+                  <p id="quiz-message" class="text-slate-300 text-xs leading-relaxed mb-5"></p>
+                  <button id="quiz-restart" class="px-5 py-2 rounded-full border border-pink-500/30 bg-pink-500/10 text-[10px] font-semibold text-pink-500 hover:bg-pink-500 hover:text-white transition-all shadow-[0_0_15px_rgba(236,72,153,0.1)]">Try Again</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             CHAPTER 6: AS ONE (Twilight Purple / Right Glass Card)
+             ======================================================== -->
+        <section id="one" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter6.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="string-lights">
+                <path d="M 0,100 Q 480,250 960,120 Q 1440,250 1920,100" stroke="rgba(255,255,255,0.12)" stroke-width="2" />
+                <circle cx="240" cy="165" r="10" fill="#fef08a" opacity="0.8" class="glow-bulb" />
+                <circle cx="480" cy="188" r="12" fill="#fef08a" opacity="0.9" class="glow-bulb" />
+                <circle cx="720" cy="165" r="10" fill="#fef08a" opacity="0.8" class="glow-bulb" />
+                <circle cx="960" cy="120" r="11" fill="#fef08a" opacity="0.9" class="glow-bulb" />
+                <circle cx="1200" cy="165" r="10" fill="#fef08a" opacity="0.8" class="glow-bulb" />
+              </g>
+            </svg>
+          </div>
+          <div class="story-content flex items-center justify-end p-6 md:p-24">
+            <div class="romantic-card max-w-xl w-full relative">
+              <span class="poetic-lyric block text-glow-romantic text-right">Walk by my side...</span>
+              <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70 text-right">...and we will find our way</span>
+              <h2 class="text-display text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-none text-glow text-right">As One</h2>
+              <div class="h-[1px] w-full bg-purple-900/30 mb-6"></div>
+              <p class="text-slate-350 text-sm md:text-base font-light leading-relaxed mb-4 text-right">
+                Twilight falls, soft and purple. Beneath the glow of festive string lights, the boundaries between you and me dissolved.
+              </p>
+              <p class="text-slate-400 text-xs md:text-sm font-light leading-relaxed text-right">
+                We walked side by side, our strides matching perfectly, moving as one soul in a sea of lights.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             CHAPTER 7: THE CAFÉ (Espresso Brown / Left Card)
+             ======================================================== -->
+        <section id="cafe" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter7.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="steam-vectors">
+                <path d="M 1350,750 Q 1330,700 1350,650 Q 1370,600 1350,550" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity="0.3" class="steam-line" />
+                <path d="M 1380,750 Q 1360,710 1380,670 Q 1400,630 1380,590" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" opacity="0.4" class="steam-line" />
+              </g>
+            </svg>
+          </div>
+          <div class="story-content flex items-center justify-start p-6 md:p-24">
+            <div class="romantic-card max-w-xl w-full relative">
+              <span class="poetic-lyric block text-glow-romantic text-left">Warm conversations...</span>
+              <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70 text-left">...eyes do the talking</span>
+              <h2 class="text-display text-3xl md:text-4xl font-extrabold tracking-tight mb-4 leading-none text-glow text-left">The Café</h2>
+              <div class="h-[1px] w-full bg-amber-900/30 mb-6"></div>
+              <p class="text-slate-300 text-sm md:text-base font-light leading-relaxed mb-4 text-left">
+                Cozy mahogany tables, the scent of fresh espresso. We sat across from each other as the steam swirled from our cups.
+              </p>
+              <p class="text-slate-400 text-xs md:text-sm font-light leading-relaxed text-left">
+                In the cozy warmth of the corner lamp, we conversed without speaking, understanding every breath and every quiet glance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================
+             CHAPTER 8: SILENCE (Silver Moon / Center Card Proposal)
+             ======================================================== -->
+        <section id="silence" class="story-section w-full h-screen overflow-hidden">
+          <div class="story-bg bg-cover bg-center" style="background-image: url('/chapter8.png')"></div>
+          <div class="story-bg-overlay"></div>
+          <div class="story-floating-assets no-select">
+            <svg class="absolute inset-0 w-full h-full opacity-45" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="full-moon">
+                <circle cx="960" cy="300" r="140" fill="#fff" opacity="0.03" />
+                <circle cx="960" cy="300" r="80" fill="#ffffff" />
+              </g>
+              <path d="M 600,350 Q 800,280 1000,320 Q 1200,360 1400,300" stroke="rgba(255,255,255,0.05)" stroke-width="30" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="story-content flex items-center justify-center p-6 md:p-24 text-center">
+            <div class="romantic-card max-w-2xl w-full relative">
+              <span class="poetic-lyric block text-glow-romantic">In beautiful silence...</span>
+              <span class="sub-lyric block text-[10px] tracking-[0.3em] uppercase mb-4 text-glow-romantic opacity-70">...I will read it all</span>
+              <h2 class="text-display text-3xl md:text-5xl font-extrabold tracking-tight mb-4 leading-none text-glow">Silence</h2>
+              <div class="h-[1px] w-full bg-slate-700/30 mb-6"></div>
+              <p class="text-slate-200 text-sm md:text-base font-light leading-relaxed mb-6 max-w-xl mx-auto">
+                Absolute comfort together. The full moon illuminates our path, casting silver threads onto the quiet night. Now, in this beautiful silence, I have one question to ask...
+              </p>
+              
+              <!-- Interactive runaway proposal panel -->
+              <div id="proposal-box" class="w-full mt-6 max-w-md mx-auto text-center border-t border-slate-700/20 pt-6">
+                <h3 class="text-base md:text-lg font-bold text-slate-100 mb-6 text-glow">Will you walk beside me forever?</h3>
+                <div class="flex justify-center items-center gap-6 relative min-h-[50px] w-full" id="proposal-buttons-area">
+                  <button id="yes-btn" class="px-8 py-2.5 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full shadow-[0_0_20px_rgba(236,72,153,0.3)] transition-transform hover:scale-105">Yes</button>
+                  <button id="no-btn" class="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-full border border-slate-700 transition-all duration-75 relative z-10">No</button>
+                </div>
+                <div id="proposal-success" class="hidden mt-6 text-pink-500 font-bold text-lg animate-bounce text-glow-romantic">
+                  Yay! I love you! ❤️ Let's write our forever chapter.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div> <!-- MASTER STORY PIN CONTAINER END -->
+
+    </div>
+  </div>
+
+  <!-- 3. INTERACTIVE HEARTS BACKGROUND CANVAS -->
+  <canvas id="hearts-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-5"></canvas>
+
+  <!-- 4. FLOATING ROMANTIC AUDIO PLAYER -->
+  <div id="music-player" class="fixed bottom-6 right-6 z-[9999] flex items-center gap-3 bg-black/50 backdrop-blur-md border border-pink-500/20 px-4 py-2.5 rounded-full cursor-pointer shadow-[0_0_20px_rgba(236,72,153,0.15)] hover:border-pink-500/50 hover:bg-black/75 transition-all select-none">
+    <div id="music-icon-container" class="relative w-6 h-6 flex items-center justify-center text-pink-500">
+      <!-- Spinning disc graphic -->
+      <svg id="music-icon-playing" class="w-5 h-5 hidden animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M12 2v10"></path>
+        <path d="M12 8a4 4 0 0 1 4 4"></path>
+      </svg>
+      <!-- Play button graphic -->
+      <svg id="music-icon-paused" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+      </svg>
+    </div>
+    <div class="flex flex-col text-left">
+      <span class="text-[8px] uppercase tracking-widest text-slate-400 font-semibold leading-none">Background Music</span>
+      <span class="text-[10px] font-bold text-pink-500 text-glow-romantic mt-0.5 leading-none">Warm Memories</span>
+    </div>
+    <audio id="bg-audio" loop preload="auto">
+      <source src="https://www.chosic.com/wp-content/uploads/2021/04/Warm-Memories-Beautiful-Piano-Inspiring-Background-Music.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- 5. PROJECT BUNDLE SCRIPTS -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
